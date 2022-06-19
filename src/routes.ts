@@ -1,9 +1,8 @@
-import { Request, Response, Router } from "express";
+import { Router } from "express";
+import CarController from "./controllers/CarController";
 
 const router = Router();
 
-router.get("/", (req: Request, res: Response) => {
-  return res.send("HEllo Word");
-});
+router.get("/cars", CarController.index);
 
 export default router;
