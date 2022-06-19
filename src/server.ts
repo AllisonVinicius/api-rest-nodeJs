@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import mongoose from "mongoose";
 const app = express();
 
@@ -14,9 +14,5 @@ mongoose
   .catch(err => {
     console.log("erro conected MongoDb", err.message);
   });
-
-app.get("/", (req: Request, res: Response) => {
-  return res.send("HEllo Word");
-});
 
 app.listen(3303);
