@@ -1,6 +1,23 @@
 import { Request, Response } from "express";
 import CarModel from "../database/CarModel";
+
 const CarController = {
+  async create(req: Request, res: Response): Promise<Response> {
+    const { marca, modelo, versao, ano, quilometragem, tipoModelo, preco } =
+      req.body;
+    let cars = await CarModel.create({
+      marca,
+      modelo,
+      versao,
+      ano,
+      quilometragem,
+      tipoModelo,
+      preco,
+    });
+
+    return res.json(cars);
+  },
+
   async index(req: Request, res: Response): Promise<Response> {
     let cars = await CarModel.find();
 
