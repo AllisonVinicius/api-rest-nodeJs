@@ -6,6 +6,12 @@ const CarController = {
 
     return res.json(cars);
   },
+  async findById(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    let cars = await CarModel.findById(id);
+
+    return res.json(cars);
+  },
 };
 
 export default CarController;
