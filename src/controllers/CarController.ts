@@ -46,6 +46,13 @@ const CarController = {
 
     return res.json(cars);
   },
+
+  async delete(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    let cars = await CarModel.findByIdAndDelete(id);
+
+    return res.json(cars);
+  },
 };
 
 export default CarController;
