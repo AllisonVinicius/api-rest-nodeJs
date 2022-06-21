@@ -29,6 +29,23 @@ const CarController = {
 
     return res.json(cars);
   },
+
+  async update(req: Request, res: Response): Promise<Response> {
+    const { id } = req.params;
+    const { marca, modelo, versao, ano, quilometragem, tipoModelo, preco } =
+      req.body;
+    let cars = await CarModel.findByIdAndUpdate(id, {
+      marca: marca,
+      modelo: modelo,
+      versao: versao,
+      ano: ano,
+      quilometragem: quilometragem,
+      tipoModelo: tipoModelo,
+      preco: preco,
+    });
+
+    return res.json(cars);
+  },
 };
 
 export default CarController;
