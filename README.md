@@ -1,2 +1,2 @@
 # api-rest-nodeJs
-Api utilizando nodeJs MongoDb
+Api básico com os métodos de create,update,delete,buscar utilizando nodeJs + Typescript +  MongoDb
